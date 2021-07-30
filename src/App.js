@@ -6,7 +6,6 @@ import './styles.css';
 function App() {
 	const initialState = () => JSON.parse(window.localStorage.getItem('mtg-player-data')) || [];
 	const [data, setData] = useState(initialState);
-	// const [previousPlayers, setPreviousPlayers] = useState(data.previousPlayers || []);
 	const [newPlayers, setNewPlayers] = useState([]);
 	const [game, setGame] = useState(false);
 
@@ -18,7 +17,6 @@ function App() {
 		<div className="App">
 			{ game === false ?
 				<GameSetup 
-					// previousPlayers={previousPlayers}
 					newPlayers={newPlayers}
 					setNewPlayers={setNewPlayers}
 					setGame={setGame}

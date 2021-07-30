@@ -1,17 +1,19 @@
 import PlayerCard from './PlayerCard';
 
 const InGame = ({ newPlayers, setNewPlayers, setData, setGame }) => {
-    
+
     const cards = newPlayers.map(player => {
         return (
-            <PlayerCard player={player} />
+            <div key={player.id} >
+                <PlayerCard player={player} />
+            </div>
         )
     });
 
     return (
         <div>
             {cards}
-            <button onClick={() => setGame(false)}>reset game</button>
+            <button className="reset" onClick={() => setGame(false)}>reset game</button>
         </div>
     )
 };

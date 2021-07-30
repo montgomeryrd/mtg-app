@@ -12,18 +12,6 @@ const GameSetup = ({ newPlayers, setNewPlayers, setGame, setData }) => {
     };
     
     // --------------------------------------------------------------------------
-        
-    // const prevPlayers = previousPlayers.map(player => {
-    //     return (
-    //         <li key={player.id} onClick={() => addPlayer(player)}>{player.name}</li>
-    //     )
-    // });
-
-    // const addPlayer = player => {
-    //     setNewPlayers([...newPlayers, player]);
-    // };
-
-    // --------------------------------------------------------------------------
 
     const currPlayers = newPlayers.map(player => {
         return (
@@ -53,12 +41,6 @@ const GameSetup = ({ newPlayers, setNewPlayers, setGame, setData }) => {
                     placeholder="add player"
                 />
             </form>
-
-            {/* <section className="previous-player-list">
-                <ul className="previous">
-                    {prevPlayers}
-                </ul>
-            </section> */}
 
             <section className="new-player-list">
                 <h2 className="title">PLAYER LIST</h2>
