@@ -4,7 +4,7 @@ const PlayerCard = ({ player }) => {
     const [count, setCount] = useState(20);
 
     return (
-        <div key={player.id} className="card-container">
+        <div key={player.id} className={count < 1 ? "card-container dead" : "card-container"}>
             <h3>{player.name}</h3>
             <section className="health">
                 <div className="minus" onClick={() => setCount(prev => prev - 1)}>-</div>
