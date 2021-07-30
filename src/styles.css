@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+:root {
+    --lite-font: #fff;
+    --dark-red: rgb(34, 24, 24);
+    --poppins: 'Poppins', sans-serif;
+}
+
+html {
+    color: var(--lite-font);
+    font-family: var(--poppins);
+}
+
+.App {
+    max-width: 700px;
+    height: 100vh;
+    margin: 0 auto;
+    background: url('./assets/bg-lite.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.setup-container form {
+    padding: 2em;
+}
+
+.setup-container form input {
+    background: #fff;
+    opacity: .9;
+    border: 2px solid #dddddd;
+    border-radius: 20mm;
+    font-size: 1.2rem;
+    user-select: none;
+    padding: .8rem 2rem;
+    box-shadow: 0 0 3px 1px;
+}
+
+.setup-container form input:focus {
+    outline: none;
+}
+
+.new-player-list {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    height: 420px;
+}
+
+.setup-container .title {
+    text-align: end;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: black;
+}
+
+.setup-container ul {
+    padding-top: 1em;
+    list-style: none;
+    overflow-y: scroll;
+}
+
+.setup-container li {
+    cursor: pointer;
+    padding: 3px 0 0 1em;
+    margin: 2px 0;
+    width: 200px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    background: var(--dark-red);
+}
+
+.setup-container .current {
+    margin-top: -1em;
+}
+
+.start-btn {
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    border: 1px solid var(--dark-red);
+    padding: .2em 0;
+    color: black;
+    font-size: 1.4rem;
+    text-align: center;
+    width: 200px;
+    transition: .25s ease-in-out;
+}
+
+.start-btn:hover {
+    background: var(--dark-red);
+    color: var(--lite-font);
+    transition: .25s ease-in-out;
+}

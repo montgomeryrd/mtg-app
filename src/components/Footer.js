@@ -1,11 +1,10 @@
 import React from 'react'
 
-const Footer = ({ setGame, newPlayers, setData }) => {
+const Footer = ({ setGame, previousPlayers, newPlayers, setData }) => {
 
     const startGame = () => {
-        setData(newPlayers, () => {
-            setGame(true);
-        });
+        setData({previousPlayers: previousPlayers, newPlayers: newPlayers})
+        setGame(true);
     };
 
     return (
