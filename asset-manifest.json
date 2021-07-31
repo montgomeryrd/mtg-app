@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mtg-app/static/css/main.d740c24c.chunk.css",
+    "main.css": "/mtg-app/static/css/main.33c97f5d.chunk.css",
     "main.js": "/mtg-app/static/js/main.fa5a1a41.chunk.js",
     "main.js.map": "/mtg-app/static/js/main.fa5a1a41.chunk.js.map",
     "runtime-main.js": "/mtg-app/static/js/runtime-main.7f12548f.js",
@@ -8,14 +8,14 @@
     "static/js/2.e532f4c9.chunk.js": "/mtg-app/static/js/2.e532f4c9.chunk.js",
     "static/js/2.e532f4c9.chunk.js.map": "/mtg-app/static/js/2.e532f4c9.chunk.js.map",
     "index.html": "/mtg-app/index.html",
-    "static/css/main.d740c24c.chunk.css.map": "/mtg-app/static/css/main.d740c24c.chunk.css.map",
+    "static/css/main.33c97f5d.chunk.css.map": "/mtg-app/static/css/main.33c97f5d.chunk.css.map",
     "static/js/2.e532f4c9.chunk.js.LICENSE.txt": "/mtg-app/static/js/2.e532f4c9.chunk.js.LICENSE.txt",
-    "static/media/styles.css": "/mtg-app/static/media/bg.c94861b0.png"
+    "static/media/styles.css": "/mtg-app/static/media/bg.d566d554.png"
   },
   "entrypoints": [
     "static/js/runtime-main.7f12548f.js",
     "static/js/2.e532f4c9.chunk.js",
-    "static/css/main.d740c24c.chunk.css",
+    "static/css/main.33c97f5d.chunk.css",
     "static/js/main.fa5a1a41.chunk.js"
   ]
 }
