@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 const GameSetup = ({ newPlayers, setNewPlayers, setGame, setData }) => {
-    
     const [value, setValue] = useState('');
     
     const handleSubmit = e => {
@@ -36,6 +35,7 @@ const GameSetup = ({ newPlayers, setNewPlayers, setGame, setData }) => {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
+                    value={value}
                     onChange={e => setValue(e.target.value)}
                     required={true}
                     placeholder="add player"
