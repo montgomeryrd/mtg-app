@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import GameSetup from './components/GameSetup';
 import InGame from './components/InGame';
+import bg from './assets/bg-lite.jpg';
 import './styles.css';
 
 function App() {

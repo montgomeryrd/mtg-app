@@ -7,20 +7,26 @@
 }
 
 /* Only Mobile */
-body {
-    background: url('./assets/bg-lite.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    max-width: 700px;
-    height: 100vh;
-    margin: 0 auto;
+html, body {
     display: flex;
     flex-direction: row;
     justify-content: center;
     color: var(--lite-font);
     font-family: var(--poppins);
+    overflow: hidden;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+body {
+    background: url('./assets/bg-lite.jpg') no-repeat center center fixed;
+    background-size: cover;
+    max-width: 700px;
+    min-height: 100vh;
+    margin: 0 auto;
 }
 
 /* Game Setup Styles */
@@ -97,6 +103,11 @@ body {
 }
 
 /* In Game Styles */
+.players-in-game {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
 .card-container {
     position: relative;
     width: 96vw;
@@ -145,5 +156,6 @@ body {
 
 .dead {
     background: black;
+    opacity: .9;
     color: black;
 }
