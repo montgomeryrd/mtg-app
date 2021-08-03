@@ -11,9 +11,9 @@ const InGame = ({ newPlayers, setNewPlayers, setData, setGame }) => {
     });
 
     return (
-        <div className="players-in-game">
+        <div className="ingame-container">
             {cards}
-            <button className="reset" onClick={() => setGame(false)}>new game</button>
+            <h4 onClick={() => setGame(false)}>new game</h4>
         </div>
     )
 };

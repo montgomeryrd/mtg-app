@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import GameSetup from './components/GameSetup';
 import InGame from './components/InGame';
-import bg from './assets/bg-lite.jpg';
 import './styles.css';
 
 function App() {
 	const initialState = () => JSON.parse(window.localStorage.getItem('mtg-player-data')) || [];
 	const [data, setData] = useState(initialState);
-	const [newPlayers, setNewPlayers] = useState([]);
+	const [newPlayers, setNewPlayers] = useState(data.newPlayers || []);
 	const [game, setGame] = useState(false);
 
 	useEffect(() => {

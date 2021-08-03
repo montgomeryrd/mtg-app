@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 :root {
     --lite-font: #fff;
     --dark-red: rgb(34, 24, 24);
     --poppins: 'Poppins', sans-serif;
+    --inter: 'Inter', sans-serif;
 }
 
 /* Only Mobile */
 html, body {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    position: relative;
+    margin: 0 auto;
     color: var(--lite-font);
     font-family: var(--poppins);
+    max-width: 700px;
+    min-height: 100vh;
     overflow: hidden;
     user-select: none;
     -moz-user-select: none;
@@ -22,12 +25,9 @@ html, body {
 }
 
 body {
-    background: url('./assets/bg-lite.jpg') no-repeat center center fixed;
+    background: url('./assets/bg.jpg') no-repeat center center;
     background-size: cover;
-    max-width: 700px;
-    min-height: 100vh;
-    margin: 0 auto;
-}
+} 
 
 /* Game Setup Styles */
 .setup-container form {
@@ -36,11 +36,10 @@ body {
 
 .setup-container form input {
     background: #fff;
-    opacity: .9;
+    opacity: .8;
     border: 2px solid #dddddd;
     border-radius: 20mm;
     font-size: 1.2rem;
-    user-select: none;
     padding: .8rem 2rem;
     box-shadow: 0 0 3px 1px;
 }
@@ -49,61 +48,100 @@ body {
     outline: none;
 }
 
-.new-player-list {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+.setup-container section {
+    width: 80vw;
+    margin: 0 auto;
+    margin-top: -1em;
     height: 420px;
 }
 
-.setup-container .title {
-    text-align: end;
+.setup-container h2 {
     font-size: 1.6rem;
     font-weight: 900;
     color: black;
 }
 
 .setup-container ul {
-    padding-top: 1em;
     list-style: none;
+    overflow-x: hidden;
     overflow-y: scroll;
+    width: 80vw;
 }
 
 .setup-container li {
     cursor: pointer;
     padding: 3px 0 0 1em;
     margin: 2px 0;
-    width: 200px;
     font-size: 1.2rem;
     font-weight: 900;
     background: var(--dark-red);
 }
 
-.setup-container .current {
-    margin-top: -1em;
-}
-
-.start-btn {
-    position: absolute;
-    bottom: 0;
-    cursor: pointer;
-    border: 1px solid var(--dark-red);
-    padding: .2em 0;
-    color: black;
-    font-size: 1.4rem;
-    text-align: center;
-    width: 200px;
-    transition: .25s ease-in-out;
-}
-
-.start-btn:hover {
-    background: var(--dark-red);
+.setup-container section ul h2 {
+    width: 80vw;
     color: var(--lite-font);
-    transition: .25s ease-in-out;
+    text-align: end;
+    text-shadow: 1px 1px 2px var(--dark-red);
+}
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: .4;}
+}
+
+.setup-container div {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 92vw;
+    height: 94vh;
+    transition: ease-in-out;
+}
+
+.setup-container div .overlay { 
+    border: 1px solid rgb(22, 0, 0) ;
+    background: rgb(30, 6, 6);
+    animation: appear 1s forwards;
+    transition: ease-in-out;
+}
+
+@keyframes boom {
+    0% {transform: scale(.6); opacity: 0;}
+    25% {transform: scale(1.2);}
+    50% {transform: scale(.8);}
+    75% {transform: scale(1.2);}
+    100% {transform: scale(1); opacity: 1;}
+}
+
+.setup-container div h2 {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-content: center;
+    text-align: center;
+    font-family: var(--inter);
+    font-size: 3rem;
+    color: var(--lite-font);
+    animation: boom 1s forwards;
+    transition: 1s ease-in-out;
+}
+
+.setup-container div button {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 50%;
+    color: var(--lite-font);
+    background: transparent;
+    border: none;
+    font-family: var(--poppins);
+    font-size: 1.6rem;
+    text-align: center;
 }
 
 /* In Game Styles */
-.players-in-game {
+.ingame-container {
     height: 100vh;
     overflow-y: scroll;
 }
@@ -111,7 +149,7 @@ body {
 .card-container {
     position: relative;
     width: 96vw;
-    margin: .6em;
+    margin: .6em auto;
     background: var(--dark-red);
     opacity: .8;
     display: grid;
@@ -124,34 +162,28 @@ body {
     left: 10px;
 }
 
-.health {
-    display: flex;
-    flex-direction: row;
+.health-container {
+    display: grid;
+    width: 70vw;
+    margin: 0 auto;
+    grid-template-columns:  1fr 1fr 1fr;
+    place-items: center;
     font-size: 2.6rem;
     font-weight: 900;
     padding: .2em .6em;
-    justify-content: center;
 }
 
-.minus, .plus {
-    margin-top: 10px;
+.minus, .plus, .health {
+    display: grid;
+    place-content: center;
+    padding: 0 .6em;
+    width: 50px;
 }
 
-.reset {
-    cursor: pointer;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    padding: 1em;
-    background: transparent;
-    color: var(--lite-font);
-    border: 1px solid var(--lite-font);
-    transition: .25s ease-in-out;
-}
-
-.reset:hover {
-    background: var(--dark-red);
-    transition: .25s ease-in-out;
+h4 {
+    text-align: end;
+    margin-right: 10px;
+    text-shadow: 1px 1px 2px var(--dark-red);
 }
 
 .dead {
