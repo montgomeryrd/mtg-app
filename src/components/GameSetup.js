@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 const GameSetup = ({ newPlayers, setNewPlayers, setGame, setData }) => {
     const [value, setValue] = useState('');
+    const [first, setFirst] = useState('');
     
     const handleSubmit = e => {
         e.preventDefault();
@@ -26,8 +27,9 @@ const GameSetup = ({ newPlayers, setNewPlayers, setGame, setData }) => {
     // --------------------------------------------------------------------------
 
     const startGame = () => {
-        setData({newPlayers: newPlayers})
-        setGame(true);
+        setData({newPlayers: newPlayers});
+        const index = Math.floor(Math.random() * newPlayers.length);
+        setFirst(newPlayers[index].name);
     };
 
     return (
@@ -42,13 +44,23 @@ const GameSetup = ({ newPlayers, setNewPlayers, setGame, setData }) => {
                 />
             </form>
 
-            <section className="new-player-list">
-                <h2 className="title">PLAYER LIST</h2>
-                <ul className="current">
+            <section>
+                <h2>PLAYER LIST</h2>
+                <ul>
                     {currPlayers}
-                    {newPlayers.length >= 2 ? <button className="start-btn" onClick={startGame}>start game</button> : ''}
+                    {newPlayers.length >= 2 ? <h2 onClick={startGame}>START GAME</h2> : ''}
                 </ul>
             </section>
+
+            {first.length ? (
+                <div>
+                    <div className="overlay"></div>
+                    <h2>{first.toUpperCase()} GOES FIRST!</h2>
+                    <button onClick={() => setGame(true)}>let's play</button>
+                </div>
+            ) : (
+                <></>
+            )}
         </div>
     )
 };
